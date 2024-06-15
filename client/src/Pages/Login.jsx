@@ -1,36 +1,50 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+// import '../Components/Styles/Login.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import {Container} from 'react-bootstrap';
+
+// import LoginForm from '../Components/Login/Login.comp';
+
+// const Login = () => {
+//     return(
+//         <div className="login-page">
+
+//             <div className="login_header ">
+                
+//                 <h1>Event Booking System</h1>
+
+//             </div>
+//             <div className="login_comp">
+//                 <LoginForm />
+//             </div>
+//         </div>
+
+//     );
+// }
+// export default Login;
+
+
+import React from 'react';
+import '../Components/Styles/Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+
+import LoginForm from '../Components/Login/Login.comp';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleUsernameChange = (e) => {
-        setUsername(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Add your login logic here
-    };
-
-    return (
-        <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Email:</label>
-                <input type="username" value={username} onChange={handleUsernameChange} />
-
-                <label>Password:</label>
-                <input type="password" value={password} onChange={handlePasswordChange} />
-
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    );
-};
+  return (
+    <div className="login-container">
+      <div className="login-header">
+        <h1>Event Booking System</h1>
+      </div>
+      <div className="login-page">
+        <Container className="login_comp">
+          <LoginForm />
+        </Container>
+      </div>
+    </div>
+  );
+}
 
 export default Login;
+
