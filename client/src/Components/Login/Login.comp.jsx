@@ -36,8 +36,6 @@ const LoginForm = ({handleOnSubmit,handleOnChange,email,password,navigateToEvent
                 </Form.Group>
                 <hr/>
                 <Button type="submit" onSubmit={handleOnSubmit}>Login</Button>
-                <hr/>
-                <Button type="submit" onClick={navigateToEventForm}>Continue to event booking</Button>
             </Form>
             </Col>
         </Row>
