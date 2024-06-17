@@ -9,7 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<EventForm />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/event-form" element={<EventForm />} />
         </Routes>
     </BrowserRouter>
 

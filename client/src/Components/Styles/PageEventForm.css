@@ -4,6 +4,8 @@ html, body {
   }
   
   body {
+    margin: 0%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +27,7 @@ html, body {
     height: 100vh; /* Full height of the form container */
     overflow-y: auto; /* Enable scrolling if content overflows */
     box-sizing: border-box;
+    
   }
   
   .form_header {
