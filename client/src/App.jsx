@@ -3,12 +3,13 @@ import { BrowserRouter, Route, Routes, useNavigate, Navigate } from 'react-route
 import './App.css';
 
 import Login from './Pages/Login';
+import EventForm from './Pages/PageEventForm';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<EventForm />} />
         </Routes>
     </BrowserRouter>
 

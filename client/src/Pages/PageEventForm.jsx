@@ -1,0 +1,177 @@
+import React, { useState } from 'react';
+import { Button, Input, Page } from '@mobiscroll/react-lite';
+import DatePicker from 'react-datepicker';
+import TimePicker from 'react-time-picker';
+import '@mobiscroll/react-lite/dist/css/mobiscroll.min.css';
+import 'react-datepicker/dist/react-datepicker.css';
+import 'react-time-picker/dist/TimePicker.css';
+import '../Components/Styles/PageEventForm.css';
+
+function EventForm() {
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [startTime, setStartTime] = useState('10:00');
+    const [endTime, setEndTime] = useState('11:00');
+
+  return (
+    <Page className="page_container">
+      <div className="form_container">
+        <div className="form_header">
+          <h3>Event Form</h3>
+          <hr />
+          <h6>Please complete insure information.</h6>
+        </div>
+        <div className="form_section">
+          <div className="section_header">
+            <h4>Applicant Information</h4>
+          </div>
+          <div className="mbsc-grid mbsc-grid-fixed">
+            <div className="mbsc-row">
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input 
+                  type="text" 
+                  label="Name" 
+                  placeholder="Name" 
+                  inputStyle="box" 
+                  labelStyle="floating" 
+                  theme="ios" 
+                  themeVariant="light"
+                />
+              </div>
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input
+                  type="text"
+                  label="Index"
+                  placeholder="Index"
+                  inputStyle="box"
+                  labelStyle="floating"
+                  theme="ios"
+                  themeVariant="light"
+                />
+              </div>
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input
+                  type="text"
+                  label="Faculty"
+                  placeholder="Faculty"
+                  inputStyle="box"
+                  labelStyle="floating"
+                  theme="ios"
+                  themeVariant="light"
+                />
+              </div>
+            </div>
+            <div className="mbsc-row">
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input
+                  type="text"
+                  label="Department"
+                  placeholder="Department"
+                  inputStyle="box"
+                  labelStyle="floating"
+                  theme="ios"
+                  themeVariant="light"
+                />
+              </div>
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input
+                  type="text"
+                  label="Email address"
+                  placeholder="Email address"
+                  inputStyle="box"
+                  labelStyle="floating"
+                  theme="ios"
+                  themeVariant="light"
+                />
+              </div>
+              <div className="mbsc-col-md-4 mbsc-col-12">
+                <Input
+                  type="text"
+                  label="Mobile Number"
+                  placeholder="Mobile Number"
+                  inputStyle="box"
+                  labelStyle="floating"
+                  theme="ios"
+                  themeVariant="light"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="form_section">
+          <div className="section_header">
+            <h4>Venue Information</h4>
+          </div>
+          <div className="mbsc-grid mbsc-grid-fixed">
+            <div className="mbsc-row">
+              <div className="mbsc-col-12">
+                <Input 
+                  type="text" 
+                  label="Place Name" 
+                  placeholder="Place Name" 
+                  inputStyle="box" 
+                  labelStyle="floating" 
+                  theme="ios" 
+                  themeVariant="light"
+                />
+              </div>
+            </div>
+            <div className="mbsc-row">
+              <div className="mbsc-col-12">
+                <Input 
+                  type="text" 
+                  label="Reason of Event" 
+                  placeholder="Reason of Event" 
+                  inputStyle="box" 
+                  labelStyle="floating" 
+                  theme="ios" 
+                  themeVariant="light"
+                  textarea={true}
+                />
+              </div>
+            </div>
+            <div className="mbsc-row">
+              <div className="mbsc-col-md-6 mbsc-col-12">
+                <div className="datepicker-container">
+                  <label>Date</label>
+                  <hr />
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => setSelectedDate(date)}
+                    className="datepicker-input"
+                  />
+                </div>
+              </div>
+              <div className="mbsc-col-md-3 mbsc-col-12">
+                <div className="timepicker-container">
+                  <label>Start Time</label>
+                  <hr />
+                  <TimePicker
+                    onChange={setStartTime}
+                    value={startTime}
+                    className="timepicker-input"
+                  />
+                </div>
+              </div>
+              <div className="mbsc-col-md-3 mbsc-col-12">
+                <div className="timepicker-container">
+                  <label>End Time</label>
+                  <hr />
+                  <TimePicker
+                    onChange={setEndTime}
+                    value={endTime}
+                    className="timepicker-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="submit_button_container">
+        <Button theme="ios" themeVariant="light" style={{ backgroundColor: '#0B0BFF', color: '#000',borderRadius: '20px' }}>Submit</Button>
+        </div>
+      </div>
+    </Page>
+  );
+}
+
+export default EventForm;
