@@ -18,18 +18,19 @@ const Welcome = () => {
   }
 
   return (
-     <div>
+     <div className="welcome-container">
       <div className="welcome-header">
-        <h1>Event Booking System</h1>
+        <p>Welcome to Venue Booking Site of Master University</p>
       </div>
-      <div className="welcome-page">
-        <Container className="welcome_comp">
-          <h1>Welcome</h1>
-          <button onClick={navigateToEventForm}>Continue to Venue booking</button>
-          <hr/>
-          <button onClick={navigateToLoginPage}>Login as admin/officer</button>
-        </Container>
-      </div>
+      
+      <div className="button-container">
+            <div className="button-rectangle" onClick={navigateToEventForm}>
+              <span className="button-text">Continue to Venue booking</span>
+            </div>
+            <div className="button-rectangle" onClick={navigateToLoginPage}>
+              <span className="button-text">Login as admin/officer</span>
+            </div>
+          </div>
     </div>
   );
 }
