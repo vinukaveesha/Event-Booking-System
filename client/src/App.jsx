@@ -12,7 +12,7 @@ function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashboardWelfare/>} />
+        <Route path="/" element={<Welcome/>} />
         <Route path="/login-page" element={<Login />} />
         <Route path="/event-form" element={<EventForm />} />
       </Routes>
