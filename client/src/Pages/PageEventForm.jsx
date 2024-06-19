@@ -11,6 +11,8 @@ function EventForm() {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [startTime, setStartTime] = useState('10:00');
     const [endTime, setEndTime] = useState('11:00');
+    const props1 = { placeholder: 'Please Select...', label: 'Calendar' };
+    const props2 = { placeholder: 'Please Select...', label: 'Date scroller' };
 
   return (
     <Page className="page_container">

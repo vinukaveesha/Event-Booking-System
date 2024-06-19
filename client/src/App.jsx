@@ -5,16 +5,19 @@ import './App.css';
 import Login from './Pages/Login';
 import EventForm from './Pages/PageEventForm';
 import Welcome from './Pages/PageWelcome';
+import DefaultLayout from './Layouts/DefaultLayout';
+import DashboardWelfare from './Pages/Dashboard/DashboardWelfare';
 
 function App() {
   return (
-    <BrowserRouter>
+      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<DashboardWelfare/>} />
         <Route path="/login-page" element={<Login />} />
         <Route path="/event-form" element={<EventForm />} />
-        </Routes>
-    </BrowserRouter>
+      </Routes>
+
+      </BrowserRouter>
 
   );
 }
