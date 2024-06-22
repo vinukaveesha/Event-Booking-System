@@ -13,8 +13,8 @@ const Welcome = () => {
     navigate("/login-page");
   }
 
-  const navigateToEventForm = () => {
-    navigate("/event-form");
+  const navigateToVenuebooking = () => {
+    navigate("/venue-booking");
   }
 
   return (
@@ -24,7 +24,7 @@ const Welcome = () => {
       </div>
       
       <div className="button-container">
-            <div className="button-rectangle" onClick={navigateToEventForm}>
+            <div className="button-rectangle" onClick={navigateToVenuebooking}>
               <span className="button-text">Continue to Venue booking</span>
             </div>
             <div className="button-rectangle" onClick={navigateToLoginPage}>
