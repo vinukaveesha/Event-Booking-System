@@ -19,7 +19,7 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('../Asserts/bcimage.jpg');
+  background-image: url('../Assets/bcimage.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
