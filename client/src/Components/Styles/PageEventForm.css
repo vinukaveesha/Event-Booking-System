@@ -17,6 +17,7 @@ html, body {
     background-color: rgb(188, 158, 152);
     padding: 20px;
     box-sizing: border-box;
+    min-width: 1500px;
   }
   .form_container {
     background-color: #e4e8e9; /* Light color background */

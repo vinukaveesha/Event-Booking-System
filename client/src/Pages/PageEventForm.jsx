@@ -6,13 +6,31 @@ import '@mobiscroll/react-lite/dist/css/mobiscroll.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import '../Components/Styles/PageEventForm.css';
+import { useNavigate } from 'react-router-dom';
 
 function EventForm() {
-    const [selectedDate, setSelectedDate] = useState(new Date());
-    const [startTime, setStartTime] = useState('10:00');
-    const [endTime, setEndTime] = useState('11:00');
-    const props1 = { placeholder: 'Please Select...', label: 'Calendar' };
-    const props2 = { placeholder: 'Please Select...', label: 'Date scroller' };
+  const [name, setName] = useState('');
+  const [index, setIndex] = useState('');
+  const [faculty, setFaculty] = useState('');
+  const [department, setDepartment] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [placeName, setPlaceName] = useState('');
+  const [reasonOfEvent, setReasonOfEvent] = useState('');
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [startTime, setStartTime] = useState('8:00');
+  const [endTime, setEndTime] = useState('11:00');
+
+    const navigate = useNavigate();
+
+    const navigateToAfterSubmitPage = () => {
+      if (!name || !index || !faculty || !department || !email || !mobileNumber || !placeName || !reasonOfEvent) {
+        alert('Please fill out all required fields.');
+        return;
+        }
+
+      navigate("/after-submit", { state: { email } });
+    }
 
   return (
     <Page className="page_container">
@@ -83,6 +101,9 @@ function EventForm() {
                   labelStyle="floating"
                   theme="ios"
                   themeVariant="light"
+                  value = {email}
+                  required
+                  onChange={(e)=>setEmail(e.target.value)}
                 />
               </div>
               <div className="mbsc-col-md-4 mbsc-col-12">
@@ -169,7 +190,7 @@ function EventForm() {
           </div>
         </div>
         <div className="submit_button_container">
-        <Button theme="ios" themeVariant="light" style={{ backgroundColor: '#0B0BFF', color: '#000',borderRadius: '20px' }}>Submit</Button>
+        <Button theme="ios" themeVariant="light" style={{ backgroundColor: '#0B0BFF', color: '#000',borderRadius: '20px' }} onClick={navigateToAfterSubmitPage}>Submit</Button>
         </div>
       </div>
     </Page>
