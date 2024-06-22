@@ -9,10 +9,10 @@ const AfterSubmit = () =>{
     const email = location.state?.email || 'unknown';
 
     return(
-        <Container>
+        <Container className="comp">
             <Row>
                 <Col>
-                    <div className="comp1">
+                    <div className="comp1" style={{marginTop:'40px'}}>
                         <Label>
                             <h3>Form ID: </h3>
                         </Label>
@@ -23,9 +23,9 @@ const AfterSubmit = () =>{
             <Row>
                 <Col>
                     <div className="mt-2 comp1">
-                        <h4>
-                            Form ID and filled form details are sent to {email}.
-                        </h4>
+                        <h5>
+                            Form ID and filled form details are sent to <b>{email}</b>.
+                        </h5>
                     </div>
                 </Col>
             </Row>
@@ -33,9 +33,9 @@ const AfterSubmit = () =>{
             <Row>
                 <Col>
                     <div className="mt-2 comp1">
-                        <h4>
+                        <h5>
                             You can check the status of the form by using with Form ID.
-                        </h4>
+                        </h5>
                     </div>
                 </Col>
             </Row>
