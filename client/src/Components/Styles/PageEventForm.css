@@ -1,0 +1,95 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+  }
+  
+  .page_container {
+    width: 100%;
+    background-color: rgb(188, 158, 152);
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 1500px;
+  }
+  .form_container {
+    background-color: #e4e8e9; /* Light color background */
+    padding: 20px; /* Padding for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Full width of the form container */
+    height: 100vh; /* Full height of the form container */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box;
+    
+  }
+  
+  .form_header {
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; /* Light gray border for the header */
+  }
+  
+  .form_header h3 {
+    margin: 0;
+  }
+  
+  .form_header h6 {
+    margin: 10px 0 0 0;
+    font-weight: normal;
+    color: #a0a8c5;
+  }
+  
+  .form_section {
+    margin-top: 20px;
+  }
+  
+  .section_header {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .mbsc-form-grid .mbsc-row {
+    margin-bottom: 20px; /* Add space between rows */
+  }
+  
+  .wide-input {
+    width: 100%; /* Set the width to 100% */
+  }
+  
+  .wide-input input {
+    width: 100%; /* Ensure the input field takes up the full width of the column */
+  }
+  
+  .datepicker-container, .timepicker-container {
+    position: relative;
+  }
+  
+  .datepicker-input, .timepicker-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .datepicker-input:focus, .timepicker-input:focus {
+    border-color: #66afe9;
+    outline: none;
+  }
+
+  .submit_button_container {
+    text-align: center;
+    margin-top: 20px;
+}

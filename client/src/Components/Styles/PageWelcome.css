@@ -1,0 +1,96 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.welcome-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Ensure the blur effect doesn't cause overflow */
+}
+
+.welcome-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../Assets/bcimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Apply blur effect */
+  z-index: -2; /* Ensure the image is behind everything */
+}
+
+.welcome-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  z-index: -1; /* Ensure the overlay is behind the content but above the image */
+}
+
+.welcome-header {
+  position: absolute;
+  width: 666px;
+  height: 354px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 85px;
+  color: #FFFFFF;
+  text-align: center;
+  z-index: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 500px; /* Adjust this value to align with the header */
+  width: 820px; /* Adjust to fit the buttons correctly */
+  z-index: 1;
+}
+
+.button-rectangle {
+  width: 394px;
+  height: 61px;
+  background: #2AA1E4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Change cursor to hand pointer on hover */
+  transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+.button-rectangle:hover {
+  background: #1C81B3; /* Change color on hover */
+}
+
+.button-rectangle:active {
+  background: #156B91; /* Change color when clicked */
+}
+
+.button-text {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 39px;
+  color: #000000;
+}
