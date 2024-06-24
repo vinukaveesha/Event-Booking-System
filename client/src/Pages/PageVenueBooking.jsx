@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../Components/Styles/PageWelcome.css';
 import '../Components/Styles/PageVenueBooking.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
@@ -21,7 +20,7 @@ const VenueBooking = () => {
   }
 
   return (
-    <div className="welcome-container">
+    <div className="pageVenue-container">
     <div className="center">
       <div className="article-card" onClick={navigateToPendingForms}>
         <div className="content">
