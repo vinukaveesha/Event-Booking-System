@@ -1,37 +1,27 @@
-import React, { useState } from "react";
-
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-
+import React from "react";
+import "../../Components/Styles/PagePendingFormsEntry.css";
+import TrackImage from "../../Components/Assets/tr2.jpg";
 
 const PendingFormsEntry = () => {
-
   return (
-    <Container>
-
-        <Row>
-            <Col>
-                <h1>Form Tracker</h1>
-            </Col>
-        </Row>
-
-        <Row>
-            <Col>
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Form ID</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Form ID" />
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-            </Col>
-        </Row>
-        
-    </Container>
-);
-
+    <div className="pagepending-container">
+      <div className="content">
+        <div className="image-container">
+          <img src={TrackImage} alt="Description of image" className="image" />
+        </div>
+        <div className="form-container">
+          <h1>Form Tracker</h1>
+          <form>
+            <div className="form-group">
+              <label htmlFor="formID">Form ID</label>
+              <input type="text" id="formID" placeholder="Enter Form ID" className="form-control" />
+            </div>
+            <button type="submit" className="submit-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default PendingFormsEntry;
