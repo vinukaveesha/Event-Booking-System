@@ -55,6 +55,8 @@ function EventForm() {
                   labelStyle="floating" 
                   theme="ios" 
                   themeVariant="light"
+                  value = {name}
+                  onChange={(e)=>setName(e.target.value)}
                 />
               </div>
               <div className="mbsc-col-md-4 mbsc-col-12">
@@ -66,6 +68,8 @@ function EventForm() {
                   labelStyle="floating"
                   theme="ios"
                   themeVariant="light"
+                  value = {index}
+                  onChange={(e)=>setIndex(e.target.value)}
                 />
               </div>
               <div className="mbsc-col-md-4 mbsc-col-12">
@@ -77,6 +81,8 @@ function EventForm() {
                   labelStyle="floating"
                   theme="ios"
                   themeVariant="light"
+                  value={faculty}
+                  onChange={(e)=>setFaculty(e.target.value)}
                 />
               </div>
             </div>
@@ -90,6 +96,8 @@ function EventForm() {
                   labelStyle="floating"
                   theme="ios"
                   themeVariant="light"
+                  value = {department}
+                  onChange={(e)=>setDepartment(e.target.value)}
                 />
               </div>
               <div className="mbsc-col-md-4 mbsc-col-12">
@@ -115,6 +123,8 @@ function EventForm() {
                   labelStyle="floating"
                   theme="ios"
                   themeVariant="light"
+                  value={mobileNumber}
+                  onChange={(e)=>setMobileNumber(e.target.value)}
                 />
               </div>
             </div>
@@ -135,6 +145,8 @@ function EventForm() {
                   labelStyle="floating" 
                   theme="ios" 
                   themeVariant="light"
+                  value={placeName}
+                  onChange={(e)=>setPlaceName(e.target.value)}
                 />
               </div>
             </div>
@@ -149,6 +161,8 @@ function EventForm() {
                   theme="ios" 
                   themeVariant="light"
                   textarea={true}
+                  value={reasonOfEvent}
+                  onChange={(e)=>setReasonOfEvent(e.target.value)}
                 />
               </div>
             </div>
