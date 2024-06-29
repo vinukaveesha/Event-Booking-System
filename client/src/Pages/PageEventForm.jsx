@@ -38,11 +38,11 @@ function EventForm() {
         <div className="form_header">
           <h3>Event Form</h3>
           <hr />
-          <h6>Please complete insure information.</h6>
+          <h5>Please complete insure information.</h5>
         </div>
         <div className="form_section">
           <div className="section_header">
-            <h4>Applicant Information</h4>
+            <p>Applicant Information</p>
           </div>
           <div className="mbsc-grid mbsc-grid-fixed">
             <div className="mbsc-row">
@@ -132,7 +132,7 @@ function EventForm() {
         </div>
         <div className="form_section">
           <div className="section_header">
-            <h4>Venue Information</h4>
+            <p>Venue Information</p>
           </div>
           <div className="mbsc-grid mbsc-grid-fixed">
             <div className="mbsc-row">
@@ -204,7 +204,7 @@ function EventForm() {
           </div>
         </div>
         <div className="submit_button_container">
-        <Button theme="ios" themeVariant="light" style={{ backgroundColor: '#0B0BFF', color: '#000',borderRadius: '20px' }} onClick={navigateToAfterSubmitPage}>Submit</Button>
+        <Button theme="ios" themeVariant="light" style={{ backgroundColor: '#156B91', color: '#000',borderRadius: '15px' }} onClick={navigateToAfterSubmitPage}>Submit</Button>
         </div>
       </div>
     </Page>

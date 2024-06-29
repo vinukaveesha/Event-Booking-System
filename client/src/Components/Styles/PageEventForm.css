@@ -20,7 +20,7 @@ html, body {
     min-width: 1500px;
   }
   .form_container {
-    background-color: #e4e8e9; /* Light color background */
+    background-color: #cae3ed; /* Light color background */
     padding: 20px; /* Padding for the container */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -39,12 +39,13 @@ html, body {
   
   .form_header h3 {
     margin: 0;
+    font-weight: bold;
   }
   
-  .form_header h6 {
+  .form_header h5 {
     margin: 10px 0 0 0;
     font-weight: normal;
-    color: #a0a8c5;
+    color: #9f3403;
   }
   
   .form_section {
@@ -52,11 +53,11 @@ html, body {
   }
   
   .section_header {
-    background-color: #ccc;
     padding: 10px;
-    border-radius: 5px;
     text-align: center;
-    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
   }
   
   .mbsc-form-grid .mbsc-row {
@@ -92,4 +93,5 @@ html, body {
   .submit_button_container {
     text-align: center;
     margin-top: 20px;
+    color: #1C81B3;
 }

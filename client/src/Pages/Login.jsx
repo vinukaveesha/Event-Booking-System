@@ -45,9 +45,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="login-header">
-        <h1>Event Booking System</h1>
-      </div>
+      
       <div className="login-page">
         <Container className="login_comp">
           <LoginForm

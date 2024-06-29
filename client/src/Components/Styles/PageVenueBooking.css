@@ -1,0 +1,81 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.article-card {
+  width: 350px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 300ms;
+}
+
+.article-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(8, 8, 8, 0.5); /* Semi-transparent dark overlay */
+  transition: all 300ms;
+  z-index: 1; /* Ensure the overlay is above the image but below the content */
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure the image is below everything */
+}
+
+.article-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  padding: 30px 20px 20px 20px;
+  height: auto;
+  bottom: 0;
+  top: 80px;
+  z-index: 2; /* Ensure the content is above the overlay */
+}
+
+.article-card .title {
+  font-size: 24px;
+  color: #c4e2ed;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0 0 3px #060505, 0 0 5px #0000FF;
+}
+
+.pageVenue-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #cae3ed;
+  min-width: 1700px;
+  overflow: hidden; /* Ensure the blur effect doesn't cause overflow */
+}
+
