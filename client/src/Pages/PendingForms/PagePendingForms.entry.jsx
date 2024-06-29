@@ -1,21 +1,18 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../../Components/Styles/PagePendingFormsEntry.css";
 import TrackImage from "../../Components/Assets/tr2.jpg";
 
 const PendingFormsEntry = () => {
-import React, { useState } from "react";
-//import { useNavigation } from "react-router-dom";
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+    const navigate = useNavigate();
 
+    const [formID, setFormID] = useState("");
 
-const PendingFormsEntry = () => {
-    // const navigate = useNavigation();
-
-    // const [formID, setFormID] = useState("");
-
-    // const handleSubmit = () => {
-    //     ///e.preventDefault();
-    //     navigate("/pending-forms");
-    // }
+    const handleSubmit = e => {
+        e.preventDefault();
+        navigate("/pending-forms");
+    }
 
   return (
     <div className="pagepending-container">
@@ -30,7 +27,7 @@ const PendingFormsEntry = () => {
               <label htmlFor="formID">Form ID</label>
               <input type="text" id="formID" placeholder="Enter Form ID" className="form-control" />
             </div>
-            <button type="submit" className="submit-button">Submit</button>
+            <button type="submit" className="submit-button" onClick={handleSubmit}>Submit</button>
           </form>
         </div>
       </div>
