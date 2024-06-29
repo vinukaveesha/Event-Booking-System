@@ -26,6 +26,10 @@ const Login = () => {
     }
   }
 
+  const navigateToOfficer = () => {
+    navigate("/dashboard-dvc");
+  }
+
   const handleOnSubmit = e => {
     e.preventDefault();
 
@@ -34,12 +38,10 @@ const Login = () => {
     }
 
     //TODO call api to submit the form
-    console.log(email, password);
+    navigateToOfficer();
   }
 
-  const navigateToEventForm = () => {
-    navigate("/event-form");
-  }
+  
 
   return (
     <div className="login-container">
@@ -53,7 +55,7 @@ const Login = () => {
             password={password}
             handleOnChange={handleOnChange}
             handleOnSubmit={handleOnSubmit}
-            navigateToEventForm={navigateToEventForm}
+            navigateToOfficer={navigateToOfficer}
           />
         </Container>
       </div>

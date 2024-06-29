@@ -3,7 +3,7 @@ import {Container,Row,Col,Form,Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 
-const LoginForm = ({handleOnSubmit,handleOnChange,email,password,navigateToEventForm}) => {
+const LoginForm = ({handleOnSubmit,handleOnChange,email,password,navigateToOfficer}) => {
 
     return(
     <Container>
@@ -20,7 +20,7 @@ const LoginForm = ({handleOnSubmit,handleOnChange,email,password,navigateToEvent
                         value={email} 
                         onChange={handleOnChange}
                         placeholder="Enter email" 
-                        required
+                        //required
                     />
                 </Form.Group>
                 <Form.Group>
@@ -31,7 +31,7 @@ const LoginForm = ({handleOnSubmit,handleOnChange,email,password,navigateToEvent
                         value = {password} 
                         onChange={handleOnChange}
                         placeholder="Enter password" 
-                        required
+                        //required
                     />
                 </Form.Group>
                 <hr/>
@@ -50,5 +50,5 @@ LoginForm.propTypes = {
     handleOnChange: PropTypes.func.isRequired,
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
-    navigateToEventForm: PropTypes.func.isRequired
+    navigateToOfficer: PropTypes.func.isRequired
 };
