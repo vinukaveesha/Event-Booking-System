@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const {setJWT, getJWT} = require('./redis.helper');
+const {storeUserRefreshJWT} = require("../model/user/User.model");
 
 const createAccessJwt = async (email,_id) => {
 
@@ -29,7 +30,7 @@ const createAccessJwt = async (email,_id) => {
 //     return Promise.resolve(refreshJWT);
 // }
 
-const createRefreshJwt = async (email) => {
+const createRefreshJwt = async (email,_id) => {
     try {
         const refreshJWT = jwt.sign(
             { email },
@@ -37,6 +38,7 @@ const createRefreshJwt = async (email) => {
             { expiresIn: "30d" }
         );
 
+        await storeUserRefreshJWT(_id,refreshJWT)
         return refreshJWT;
     } catch (error) {
         throw new Error("Failed to create refresh JWT");
