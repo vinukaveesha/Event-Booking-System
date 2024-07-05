@@ -2,12 +2,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import '../Styles/Navbar.css';
 
 function NavBar() {
   return (
-    <Navbar expand="sm" className="bg-body-tertiary" style={{width:90, marginTop:'20px'}}>
+    <Navbar expand="sm" className="bg-body-tertiary" style={{width:1500, marginTop:'20px'}}>
       <Container>
-        <Navbar.Brand href="#home" ><h2>Dashboard</h2></Navbar.Brand>
+        <Navbar.Brand href="#home" className = "navbar-brand-left"><h2>Dashboard</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
