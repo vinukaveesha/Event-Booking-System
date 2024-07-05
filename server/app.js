@@ -3,13 +3,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const helmet = require ('helmet')
+//const helmet = require ('helmet')
 const morgan = require('morgan')
 const port = process.env.PORT || 3000 
 
 const errorHandler = require('./src/utils/errorHandler')
 
-app.use(helmet())   // API security , HTTP headers
+//app.use(helmet())   // HTTP headers
 app.use(cors())   // CORS
 
 // MongoDB connection

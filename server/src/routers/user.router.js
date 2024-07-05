@@ -1,14 +1,17 @@
 const express = require("express");
 const {route} = require("./event.router");
 const router = express.Router();
-const {insertUser} = require("../model/user/User.model");
-const {hashPassword} = require("../helpers/bcrypt.helper");
+const {insertUser,getUserByEmail} = require("../model/user/User.model");
+const {hashPassword,comparePassword} = require("../helpers/bcrypt.helper");
+const {createAccessJwt, createRefreshJwt} = require("../helpers/jwt.helper");
+
+
 
 router.all("/",(req,res,next)=>{
-    //res.json({message:"Return from user router"})
     next();
 });
 
+//create user
 router.post("/",async (req,res)=>{
 
     const {name,id,division,position,phoneNumber,email,password} = req.body;
@@ -35,5 +38,45 @@ router.post("/",async (req,res)=>{
         res.json({status:"error", message:error.message});
     } 
 });
+
+//create signin router
+router.post("/login",async (req,res)=>{
+    const {email,password} = req.body;
+
+    if(!email || !password){
+        return res.json({status:"error",message:"Invalid form submission"});
+    }
+
+    try {
+        const user = await getUserByEmail(email);    //get user with email from db
+
+        const passwordFromDb = user && user._id ? user.password : null;
+        
+        if (!passwordFromDb) {
+            return res.json({ status: "error", message: "Invalid email or password" });
+        };
+        
+        const result = await comparePassword(password,passwordFromDb);   //compare hashed password with password from db
+
+        if (!result){
+            return res.json({ status: "error", message: "Invalid email or password" });
+        }
+
+        const accessJWT = await createAccessJwt(user.email);   //create access jwt
+        const refreshJWT = await createRefreshJwt(user.email); //create refresh jwt
+
+        res.json({ 
+            status: "successful", 
+            message: "User login is successful.", 
+            accessJWT, 
+            refreshJWT
+        });
+
+    } catch (error) {
+        res.json({ status: "error", message: error.message });
+
+        console.log(error);
+    }
+})
 
 module.exports = router;

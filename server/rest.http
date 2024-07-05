@@ -1,0 +1,24 @@
+### user signup endpoint
+POST http://localhost:3000/v1/user
+Content-Type: application/json
+
+{
+    "name":"Saman Perera",
+    "id":"402134B",
+    "division":"welfare",
+    "position":"divison-officer",
+    "phoneNumber":773679690,
+    "email":"vinu@uom.lk",
+    "password":"qwerA1234"
+}
+
+
+### user signin endpoint
+POST http://localhost:3000/v1/user/login
+Content-Type: application/json
+
+{
+    "email":"vinu@uom.lk",
+    "password":"qwerA1234"
+    
+}
