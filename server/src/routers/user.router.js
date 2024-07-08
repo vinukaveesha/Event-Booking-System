@@ -5,8 +5,6 @@ const {insertUser,getUserByEmail} = require("../model/user/User.model");
 const {hashPassword,comparePassword} = require("../helpers/bcrypt.helper");
 const {createAccessJwt, createRefreshJwt} = require("../helpers/jwt.helper");
 
-
-
 router.all("/",(req,res,next)=>{
     next();
 });
