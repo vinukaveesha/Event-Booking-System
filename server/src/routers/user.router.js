@@ -5,8 +5,6 @@ const {insertUser,getUserByEmail} = require("../model/user/User.model");
 const {hashPassword,comparePassword} = require("../helpers/bcrypt.helper");
 const {createAccessJwt, createRefreshJwt} = require("../helpers/jwt.helper");
 
-
-
 router.all("/",(req,res,next)=>{
     next();
 });
@@ -62,8 +60,8 @@ router.post("/login",async (req,res)=>{
             return res.json({ status: "error", message: "Invalid email or password" });
         }
 
-        const accessJWT = await createAccessJwt(user.email);   //create access jwt
-        const refreshJWT = await createRefreshJwt(user.email); //create refresh jwt
+        const accessJWT = await createAccessJwt(user.email,`${user._id}`);   //create access jwt
+        const refreshJWT = await createRefreshJwt(user.email,`${user._id}`);  //create refresh jwt
 
         res.json({ 
             status: "successful", 
