@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const { v4: uuidv4 } = require('uuid'); // For generating unique IDs
 
 const EventSchema = new Schema({
 
     formID: {
         type: String,
-        required: true,
-        unique: true
+        unique: true,
+        default: uuidv4
     },
     applicantName: {
         type: String,

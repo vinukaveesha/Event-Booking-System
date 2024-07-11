@@ -1,0 +1,16 @@
+### event creation endpoint
+POST http://localhost:3000/v1/event
+Content-Type: application/json
+{
+    "name": "Alice Green",
+    "index": "E56789",
+    "faculty": "Law",
+    "department": "Criminal Justice",
+    "email": "alicegreen@example.com",
+    "mobileNumber": "45678901234",
+    "placeName": "Lecture Hall 1",
+    "reasonOfEvent": "Legal Ethics Workshop",
+    "selectedDate": "2024-11-05T00:00:00Z",
+    "startTime": "01:00 PM",
+    "endTime": "05:00 PM"
+};

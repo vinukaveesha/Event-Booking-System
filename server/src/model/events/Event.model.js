@@ -1,59 +1,49 @@
-const {EventSchema} = require('./Event.schema');
+const Event = require('./Event.schema');
 
-const insertEvent = (eventObj)=>{
-    return new Promise((resolve,reject)=>{
+const insertEvent = (eventObj) => {
+    return new Promise((resolve, reject) => {
         try {
-            EventSchema(eventObj)
-            .save()
-            .then((data)=>resolve(data))
-            .catch((error)=>reject(error));
-        }        
-        catch (error) {
-            console.log(error)
+            const newEvent = new Event(eventObj);
+            newEvent.save()
+                .then((data) => resolve(data))
+                .catch((error) => reject(error));
+        } catch (error) {
+            console.log(error);
             reject(error);
         }
-    })
+    });
 };
 
-const getEventByFormID = async (FormID) => {
+const getEventByFormID = async (formID) => {
     try {
-        return await EventSchema
-        .findOne({FormID})
-        .select({__v:0});
+        return await Event.findOne({ formID }).select({ __v: 0 });
+    } catch (error) {
+        console.log("Not found");
     }
-    catch (error){
-        console.log(error);
-    }    
 };
 
-const updateEvent = async (FormID,eventObj) => {
+const updateEvent = async (formID, eventObj) => {
     try {
-        return await EventSchema
-        .findOneAndUpdate({FormID},{$set:eventObj},{new:true});
-    }
-    catch (error){
+        return await Event.findOneAndUpdate({ formID }, { $set: eventObj }, { new: true });
+    } catch (error) {
         console.log(error);
-    }    
-}
+    }
+};
 
-const updateEventStatus = async (FormID,status) => {
+const updateEventStatus = async (formID, status) => {
     try {
-        return await EventSchema
-        .findOneAndUpdate({FormID},{$set:{status}},{new:true});
-    }
-    catch (error){
+        return await Event.findOneAndUpdate({ formID }, { $set: { status } }, { new: true });
+    } catch (error) {
         console.log(error);
-    }    
-}
+    }
+};
 
-const closeEvent = async (FormID) => {
+const closeEvent = async (formID) => {
     try {
-        return await EventSchema
-        .findOneAndUpdate({FormID},{$set:{status:"closed"}},{new:true});
-    }
-    catch (error){
+        return await Event.findOneAndUpdate({ formID }, { $set: { status: "closed" } }, { new: true });
+    } catch (error) {
         console.log(error);
-    }    
-}   
+    }
+};
 
-module.exports = {insertEvent,getEventByFormID,updateEvent,updateEventStatus}
+module.exports = { insertEvent, getEventByFormID, updateEvent, updateEventStatus, closeEvent };

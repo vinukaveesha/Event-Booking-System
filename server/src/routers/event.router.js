@@ -2,40 +2,50 @@ const express = require("express");
 const router = express.Router();
 const {insertEvent,getEventByFormID,updateEvent} = require("../model/events/Event.model");
 
-router.all("/",(req,res,next)=>{
-    res.json({message:"Return from event router"})
-});
+// router.all("/",(req,res,next)=>{
+//     res.json({message:"Return from event router"})
+// });
 
 // create event
-router.post("/",async(req,res)=>{
+router.post("/", async (req, res) => {
     try {
-        const {name,index,faculty,department,email,mobileNumber,placeName,reasonOfEvent,selectedDate,startTime,endTime} = req.body;
-
-        const newEventObj = {
-            name,
-            index,
+        const {
+            applicantName,
+            applicantIndex,
             faculty,
             department,
-            email,
-            mobileNumber,
-            placeName,
-            reasonOfEvent,
+            applicantEmail,
+            phoneNumber,
+            placename,
+            reasonofEvent,
+            selectedDate,
+            startTime,
+            endTime
+        } = req.body;
+
+        const newEventObj = {
+            applicantName,
+            applicantIndex,
+            faculty,
+            department,
+            applicantEmail,
+            phoneNumber,
+            placename,
+            reasonofEvent,
             selectedDate,
             startTime,
             endTime
         };
 
         const result = await insertEvent(newEventObj);
-        res.json({message:"New event is created",data:result});
-        
-        } 
-    
-    catch (error) {
+        res.json({ message: "New event is created", data: result });
+    } catch (error) {
         console.log(error);
-        res.json({status:"error", message:error.message});
+        if (!res.headersSent) {
+            res.status(500).json({ status: "error", message: error.message });
         }
     }
-);
+});
 
 // get event by FormID
 router.get("/:FormID",async(req,res)=>{
@@ -47,7 +57,7 @@ router.get("/:FormID",async(req,res)=>{
     
     catch (error) {
         console.log(error);
-        res.json({status:"error", message:error.message});
+        res.json({status:"error --", message:error.message});
         }
     }
 );
