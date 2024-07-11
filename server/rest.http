@@ -28,22 +28,30 @@ POST http://localhost:3000/v1/event
 Content-Type: application/json
 
 {
-    "applicantName":"John Snow",
-    "applicantIndex":"E56766",
-    "faculty":"Engineering",
-    "department":"Criminal Justice",
-    "applicantEmail":"johnsnow@example.com",
-    "phoneNumber":"45678901234",
-    "placename":"Lecture Hall 1",
-    "reasonofEvent":"Legal Ethics Workshop",
-    "selectedDate":"2024-11-15T00:00:00Z",
-    "startTime":"01:00 PM",
-    "endTime":"05:00 PM"
+    "applicantName":"Wiil Smith",
+        "applicantIndex":"E99183",
+        "faculty":"Engineering",
+        "department":"Criminal Justice",
+        "applicantEmail":"johnsnow1@example.com",
+        "phoneNumber":"45678908052",
+        "placename":"Lecture Hall 3",
+        "reasonofEvent":"Legal Ethics Workshop",
+        "selectedDate":"2024-08-05T11:06:34Z",
+        "startTime":"03:00 PM",
+        "endTime":"06:00 PM"
 }
 
 ### event fetch endpoint
-GET http://localhost:3000/v1/event/e808d3a4-6b57-4153-800d-947b4585367a
+GET http://localhost:3000/v1/event/7aab8373-0c84-47e3-ac06-12d8a60c489a
 Content-Type: application/json
+
+### close event endpoint
+PATCH http://localhost:3000/v1/event/7a8abcf4-75fe-4645-aa60-a1ea156f31b7
+Content-Type: application/json
+
+{
+    "status":"closed"
+}
 
 
 

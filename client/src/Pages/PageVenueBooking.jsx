@@ -12,7 +12,7 @@ const VenueBooking = () => {
   const navigate = useNavigate();
 
   const navigateToPendingForms = () => {
-    navigate("/pending-forms-entry");
+    navigate("/pending-forms");
   }
 
   const navigateToEventForm = () => {

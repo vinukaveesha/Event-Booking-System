@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter , Route, Routes, Router,Switch} from 'react-router-dom';
 import './App.css';
+import Axios from 'axios';
 
 import Login from './Pages/Login';
 import EventForm from './Pages/PageEventForm';
@@ -18,15 +19,15 @@ function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Welcome/>} />
+        <Route path="/" element={<PendingFormsEntry/>} />
         <Route path="/dashboard-welfare" element={<DashboardWelfare />} />
         <Route path="/dashboard-dvc" element={<DashboardDVC />} />
         <Route path="/login-page" element={<Login />} />
         <Route path="/after-submit" element={<AfterSubmit />} />
         <Route path="/venue-booking" element={<VenueBooking />} />
-        <Route path="/pending-forms-entry" element={<PendingFormsEntry />} />
+        <Route path="/pending-forms" element={<PendingFormsEntry />} />
         <Route path="/event-form" element={<EventForm />} />
-        <Route path="/pending-forms" element={<PendingForms />} />
+        <Route path="/pending-forms/:formID" element={<PendingForms />} />
       </Routes>
       </BrowserRouter>
 
