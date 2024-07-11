@@ -14,7 +14,6 @@ Event APIs
 
 | Routers                    | Verbs | Progress | Is Private | Description                  |
 | :------------------------- | :---- | :------- | :--------- | :--------------------------- |
-| /v1/event                  | GET   | Not yet  | No         | Get event information        |
 | /v1/event                  | POST  | Not yet  | No         | Create a event               |
 | /v1/event/{id}             | GET   | Not yet  | No         | Get pending information      |
 | /v1/event/{id}             | PUT   | Not yet  | No         | Update event details         |
