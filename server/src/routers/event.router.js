@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {insertEvent,getEventByFormID,updateEvent} = require("../model/events/Event.model");
+const {insertEvent,getEventByFormID,updateEvent,closeEvent} = require("../model/events/Event.model");
 
 // router.all("/",(req,res,next)=>{
 //     res.json({message:"Return from event router"})
@@ -48,27 +48,63 @@ router.post("/", async (req, res) => {
 });
 
 // get event by FormID
-router.get("/:FormID",async(req,res)=>{
+router.get("/:formID",async(req,res)=>{
+
     try {
-        const {FormID} = req.params;
-        const event = await getEventByFormID(FormID);
+        const {formID} = req.params;
+        console.log("FormID in event router ",formID);
+        const event = await getEventByFormID(formID);
+        if (!event) {
+            return res.status(404).json({ status: "error", message: "Event not found" });
+        }
         res.json({event});
     } 
     
     catch (error) {
         console.log(error);
-        res.json({status:"error --", message:error.message});
+        res.status(500).json({ status: "error", message: error.message });
         }
     }
 );
 
 
 // update event by FormID
-router.patch("/:FormID",async(req,res)=>{
+router.patch("/:formID",async(req,res)=>{
     try {
         const {FormID} = req.params;
         const eventObj = req.body;
         const event = await updateEvent(FormID,eventObj);
+        res.json({event});
+    } 
+    
+    catch (error) {
+        console.log(error);
+        res.json({status:"error", message:error.message});
+        }
+    }
+);
+
+// update event status by FormID
+router.patch("/:FormID/status",async(req,res)=>{
+    try {
+        const {FormID} = req.params;
+        const {status} = req.body;
+        const event = await updateEventStatus(FormID,status);
+        res.json({event});
+    } 
+    
+    catch (error) {
+        console.log(error);
+        res.json({status:"error", message:error.message});
+        }
+    }
+);
+
+// close event by FormID
+router.patch("/:FormID/close",async(req,res)=>{
+    try {
+        const {FormID} = req.params;
+        const event = await closeEvent(FormID);
         res.json({event});
     } 
     

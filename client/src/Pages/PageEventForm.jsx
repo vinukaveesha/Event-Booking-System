@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import '../Components/Styles/PageEventForm.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function EventForm() {
   const [name, setName] = useState('');
@@ -24,10 +25,31 @@ function EventForm() {
     const navigate = useNavigate();
 
     const navigateToAfterSubmitPage = () => {
+
       if (!name || !index || !faculty || !department || !email || !mobileNumber || !placeName || !reasonOfEvent) {
         alert('Please fill out all required fields.');
         return;
-        }
+      }
+
+      axios.post('http://localhost:3000/v1/event', {
+        applicantName: name,
+        applicantIndex: index,
+        faculty: faculty,
+        department: department,
+        applicantEmail: email,
+        phoneNumber: mobileNumber,
+        placename: placeName,
+        reasonofEvent: reasonOfEvent,
+        selectedDate : selectedDate,
+        startTime: startTime,
+        endTime: endTime
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
       navigate("/after-submit", { state: { email } });
     }

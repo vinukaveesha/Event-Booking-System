@@ -16,7 +16,9 @@ const insertEvent = (eventObj) => {
 
 const getEventByFormID = async (formID) => {
     try {
-        return await Event.findOne({ formID }).select({ __v: 0 });
+        console.log("FormID", formID);
+        const event = await Event.findOne({ formID: formID }).select({ __v: 0 });
+        return event;
     } catch (error) {
         console.log("Not found");
     }
