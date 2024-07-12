@@ -8,10 +8,9 @@ const PrivateRoute = ({ children, ...rest }) => {
         <Route
             render={()=>
                 isAuth ? 
-                    children
-                 : (
-                    <Navigate to="/login-page"/>
-                )
+                    children: (
+                        <Navigate to="/login-page"/>
+                    )
             }
         />
     );

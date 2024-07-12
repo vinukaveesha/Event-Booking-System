@@ -19,7 +19,7 @@ function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PendingFormsEntry/>} />
+        <Route path="/" element={<Welcome/>} />
         <Route path="/dashboard-welfare" element={<DashboardWelfare />} />
         <Route path="/dashboard-dvc" element={<DashboardDVC />} />
         <Route path="/login-page" element={<Login />} />
