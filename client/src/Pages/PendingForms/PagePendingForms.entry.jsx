@@ -1,17 +1,14 @@
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import "../../Components/Styles/PagePendingFormsEntry.css";
 import TrackImage from "../../Components/Assets/tr2.jpg";
 
-const PendingFormsEntry = () => {
-import React, { useState } from "react";
-//import { useNavigation } from "react-router-dom";
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-
+// If you need the useNavigation import, uncomment and move it to the top
+// import { useNavigation } from "react-router-dom";
 
 const PendingFormsEntry = () => {
     // const navigate = useNavigation();
-
     // const [formID, setFormID] = useState("");
-
     // const handleSubmit = () => {
     //     ///e.preventDefault();
     //     navigate("/pending-forms");
