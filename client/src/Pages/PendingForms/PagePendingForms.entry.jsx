@@ -1,8 +1,22 @@
-import React from "react";
 import "../../Components/Styles/PagePendingFormsEntry.css";
 import TrackImage from "../../Components/Assets/tr2.jpg";
 
 const PendingFormsEntry = () => {
+import React, { useState } from "react";
+//import { useNavigation } from "react-router-dom";
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+
+
+const PendingFormsEntry = () => {
+    // const navigate = useNavigation();
+
+    // const [formID, setFormID] = useState("");
+
+    // const handleSubmit = () => {
+    //     ///e.preventDefault();
+    //     navigate("/pending-forms");
+    // }
+
   return (
     <div className="pagepending-container">
       <div className="content">
