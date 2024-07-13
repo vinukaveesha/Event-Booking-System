@@ -11,12 +11,13 @@ import AfterSubmit from './Pages/PageAfterSubmitt';
 import VenueBooking from './Pages/PageVenueBooking';
 import PendingFormsEntry from './Pages/PendingForms/PagePendingForms.entry';
 import PendingForms from './Pages/PendingForms/PagePendingForms';
+import PageDetailsWelfare from './Pages/pageDetailsWelfare';
 
 function App() {
   return (
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Welcome/>} />
+        <Route path="/" element={<PageDetailsWelfare/>} />
         <Route path="/login-page" element={<Login />} />
         <Route path="/after-submit" element={<AfterSubmit />} />
         <Route path="/venue-booking" element={<VenueBooking />} />

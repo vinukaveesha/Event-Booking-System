@@ -20,6 +20,7 @@ body {
   font-family: Helvetica, sans-serif;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 300ms;
+  cursor: pointer;
 }
 
 .article-card::after {
@@ -54,10 +55,11 @@ body {
   box-sizing: border-box;
   width: 100%;
   position: relative;
-  padding: 30px 20px 20px 20px;
+  padding-left: 20px;
   height: auto;
   bottom: 0;
-  top: 80px;
+  top: 120px;
+  background: none;
   z-index: 2; /* Ensure the content is above the overlay */
 }
 
@@ -78,4 +80,3 @@ body {
   min-width: 1700px;
   overflow: hidden; /* Ensure the blur effect doesn't cause overflow */
 }
-
