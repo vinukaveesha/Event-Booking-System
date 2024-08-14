@@ -12,7 +12,7 @@ Notification System: Users receive notifications when the status of their form c
 
 **<h3>Technologies Used</h3>**
 
-Frontend: HTML, CSS, JavaScript (React.js/Angular/Vue.js)
-Backend: Node.js/Express.js, Django, Flask (choose one or more based on your stack)
-Database: MySQL, PostgreSQL, MongoDB (depending on your preference)
+Frontend: HTML, CSS, React.js
+Backend: Node.js/Express.js
+Database: MongoDB
 Authentication: JWT (JSON Web Tokens), OAuth
