@@ -14,7 +14,7 @@ const PendingForms = () => {
   useEffect(() => {
     const fetchEvent = async () => {
         try {
-            const response = await Axios.get(`http://localhost:3000/v1/event/${formID}`);
+            const response = await Axios.get(`http://localhost:3000/v1/event/form/${formID}`);
             setEvent(response.data.event);
         } catch (error) {
             console.error("Error fetching event:", error);

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {insertEvent,getEventByFormID,updateEvent,closeEvent} = require("../model/events/Event.model");
+const {insertEvent,getEventByFormID,updateEvent,closeEvent, getEventForms} = require("../model/events/Event.model");
 
 // router.all("/",(req,res,next)=>{
 //     res.json({message:"Return from event router"})
@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
 });
 
 // get event by FormID
-router.get("/:formID",async(req,res)=>{
+router.get("/form/:formID",async(req,res)=>{
 
     try {
         const {formID} = req.params;
@@ -67,6 +67,21 @@ router.get("/:formID",async(req,res)=>{
     }
 );
 
+// get event forms by status
+router.get("status/:status", async (req, res) => {
+    const { status } = req.params;
+
+    try {
+        const events = await getEventForms(status);
+        if (!events || events.length === 0) {
+            return res.status(404).json({ status: "error", message: "No events found" });
+        }
+        res.json({ events });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ status: "error", message: error.message });
+    }
+});
 
 // update event by FormID
 router.patch("/:formID",async(req,res)=>{

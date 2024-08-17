@@ -24,6 +24,17 @@ const getEventByFormID = async (formID) => {
     }
 };
 
+const getEventForms = async (status) => {
+    try {
+        const events = await Event.find({ status }).select({ __v: 0 });
+        return events;
+    } catch (error) {
+        console.log("Not found");
+        throw error; 
+    }
+};
+
+
 const updateEvent = async (formID, eventObj) => {
     try {
         return await Event.findOneAndUpdate({ formID }, { $set: eventObj }, { new: true });
@@ -48,4 +59,4 @@ const closeEvent = async (formID) => {
     }
 };
 
-module.exports = { insertEvent, getEventByFormID, updateEvent, updateEventStatus, closeEvent };
+module.exports = { insertEvent, getEventByFormID, updateEvent, updateEventStatus, closeEvent,getEventForms };
