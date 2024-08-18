@@ -1,0 +1,62 @@
+/* Container for the signup page */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    min-width: 1000px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Styling the signup page itself */
+  .signup-page {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 700px;
+    width: 100%;
+  }
+  
+  /* Form container inside the signup page */
+  .signup_comp {
+    justify-content: center;
+    min-width: 700px;
+    width: 100%;
+  }
+  
+  /* Input fields styling */
+  .signup_comp .form-control {
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  .signup_comp .btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+  
+  .signup_comp .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Label styling */
+  .signup_comp .form-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  /* Heading (optional) */
+  .signup_comp h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  

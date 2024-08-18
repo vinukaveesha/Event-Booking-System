@@ -24,6 +24,18 @@ const getEventByFormID = async (formID) => {
     }
 };
 
+const getEventForms = async (status) => {
+    try {
+        const events = await Event.find({ status }).select('-__v'); // Using the negative sign to exclude the __v field
+        return events;
+    } catch (error) {
+        console.error("Error fetching events:", error.message || error); // Log the actual error
+        throw error; 
+    }
+};
+
+
+
 const updateEvent = async (formID, eventObj) => {
     try {
         return await Event.findOneAndUpdate({ formID }, { $set: eventObj }, { new: true });
@@ -48,4 +60,4 @@ const closeEvent = async (formID) => {
     }
 };
 
-module.exports = { insertEvent, getEventByFormID, updateEvent, updateEventStatus, closeEvent };
+module.exports = { insertEvent, getEventByFormID, updateEvent, updateEventStatus, closeEvent,getEventForms };

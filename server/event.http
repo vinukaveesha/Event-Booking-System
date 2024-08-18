@@ -14,3 +14,15 @@ Content-Type: application/json
     "startTime": "01:00 PM",
     "endTime": "05:00 PM"
 };
+
+### event fetch endpoint
+GET http://localhost:3000/v1/event/7aab8373-0c84-47e3-ac06-12d8a60c489a
+Content-Type: application/json
+
+### close event endpoint
+PATCH http://localhost:3000/v1/event/7a8abcf4-75fe-4645-aa60-a1ea156f31b7
+Content-Type: application/json
+
+{
+    "status":"closed"
+}

@@ -13,6 +13,7 @@ import AfterSubmit from './Pages/PageAfterSubmitt';
 import VenueBooking from './Pages/PageVenueBooking';
 import PendingFormsEntry from './Pages/PendingForms/PagePendingForms.entry';
 import PendingForms from './Pages/PendingForms/PagePendingForms';
+import SignUp from './Pages/Signup';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Welcome/>} />
+        <Route path="/sign-up" element={<SignUp/>} />
         <Route path="/dashboard-welfare" element={<DashboardWelfare />} />
         <Route path="/dashboard-dvc" element={<DashboardDVC />} />
         <Route path="/login-page" element={<Login />} />

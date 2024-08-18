@@ -13,7 +13,7 @@ const PendingFormsEntry = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-          const response = await Axios.get(`http://localhost:3000/v1/event/${formID}`);
+          const response = await Axios.get(`http://localhost:3000/v1/event/form/${formID}`);
           const eventData = response.data.event;
           if (!eventData) {
               console.log("Event not found");
