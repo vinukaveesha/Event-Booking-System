@@ -68,7 +68,7 @@ router.get("/form/:formID",async(req,res)=>{
 );
 
 // get event forms by status
-router.get("status/:status", async (req, res) => {
+router.get("/status/:status", async (req, res) => {
     const { status } = req.params;
 
     try {

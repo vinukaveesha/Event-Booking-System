@@ -26,13 +26,14 @@ const getEventByFormID = async (formID) => {
 
 const getEventForms = async (status) => {
     try {
-        const events = await Event.find({ status }).select({ __v: 0 });
+        const events = await Event.find({ status }).select('-__v'); // Using the negative sign to exclude the __v field
         return events;
     } catch (error) {
-        console.log("Not found");
+        console.error("Error fetching events:", error.message || error); // Log the actual error
         throw error; 
     }
 };
+
 
 
 const updateEvent = async (formID, eventObj) => {

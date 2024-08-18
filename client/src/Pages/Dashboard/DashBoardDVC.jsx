@@ -68,7 +68,7 @@ const DashboardDVC = () => {
                 <Nav.Link
                   href="#approved"
                   style={{ marginRight: '16px', width: 100 }}
-                  onClick={() => setStatus('Welfare approved')}
+                  onClick={() => setStatus('closed')}
                 >
                   <h5>Approved</h5>
                 </Nav.Link>
